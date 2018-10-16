@@ -7,11 +7,9 @@ def inception_module(input):
     conv_1x1 = tf.layers.conv2d(input, filters=64, kernel_size=(1, 1), strides=1, padding='same', activation=tf.nn.relu)
     print('conv_1x1 shape: ', conv_1x1.get_shape().as_list())
 
-    conv_3x3_reduce = tf.layers.conv2d(input, filters=96, kernel_size=(1, 1), strides=1, padding='same',
-                                       activation=tf.nn.relu)
+    conv_3x3_reduce = tf.layers.conv2d(input, filters=96, kernel_size=(1, 1), strides=1, padding='same', activation=tf.nn.relu)
 
-    conv_3x3 = tf.layers.conv2d(conv_3x3_reduce, filters=128, kernel_size=(3, 3), strides=(1, 1), padding='same',
-                                activation=tf.nn.relu)
+    conv_3x3 = tf.layers.conv2d(conv_3x3_reduce, filters=128, kernel_size=(3, 3), strides=(1, 1), padding='same', activation=tf.nn.relu)
     print('conv_3x3 shape: ', conv_3x3.get_shape().as_list())
     
     conv_5x5_reduce = tf.layers.conv2d(input, filters=16, kernel_size=(1,1), strides=1, padding='same', activation=tf.nn.relu)
